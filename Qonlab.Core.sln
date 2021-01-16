@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qonlab.Core", "Qonlab.Core\Qonlab.Core.csproj", "{AE148DB7-E09C-4DE5-A86B-3552FE4A699E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE148DB7-E09C-4DE5-A86B-3552FE4A699E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE148DB7-E09C-4DE5-A86B-3552FE4A699E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE148DB7-E09C-4DE5-A86B-3552FE4A699E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE148DB7-E09C-4DE5-A86B-3552FE4A699E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFB7537A-67C3-4903-92F6-6B0846592243}
+	EndGlobalSection
+EndGlobal
