@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Qonlab.Core</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <description>Qonlab core functions</description>
     <authors>Qonlab GmbH</authors>
     <title>Qonlab.Core</title>
