@@ -6,12 +6,6 @@ using System.Text;
 namespace Qonlab.Core {
     public static class DictionaryExtensions {
         [DebuggerStepThrough]
-        public static TValue GetValueOrDefault<TKey, TValue>( this IDictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue ) {
-            TValue value;
-            return dictionary.TryGetValue( key, out value ) ? value : defaultValue;
-        }
-
-        [DebuggerStepThrough]
         public static SortedDictionary<TKey, TValue> ToSortedDictionary<TSource, TKey, TValue>( this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TValue> valueSelector ) {
             var d = new SortedDictionary<TKey, TValue>();
 
