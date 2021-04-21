@@ -6,10 +6,9 @@ using System.Text;
 namespace Qonlab.Core {
     public static class DictionaryExtensions {
         [DebuggerStepThrough]
-        public static U Get<T, U>( this Dictionary<T, U> dict, T key ) where U : class {
-            U val;
-            dict.TryGetValue( key, out val );
-            return val;
+        public static TValue GetValueOrDefault<TKey, TValue>( this Dictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue ) {
+            TValue value;
+            return dictionary.TryGetValue( key, out value ) ? value : defaultValue;
         }
 
         [DebuggerStepThrough]

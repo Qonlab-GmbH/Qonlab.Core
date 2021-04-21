@@ -2,13 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Qonlab.Core</id>
-    <version>1.0.2</version>
-	<description>Qonlab core functions</description>
-	<authors>Qonlab GmbH</authors>
+    <version>1.0.3</version>
+    <description>Qonlab core functions</description>
+    <authors>Qonlab GmbH</authors>
     <title>Qonlab.Core</title>
     <owners>Qonlab GmbH</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright © 2021</copyright>
-	<icon>https://www.qonlab.com/wp-content/uploads/QonlabImage.jpg</icon>
+    <icon>icon.png</icon>
   </metadata>
+  <files>
+    <file src="icon.png"/>
+  </files>
 </package>
