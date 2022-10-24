@@ -391,6 +391,32 @@ namespace Qonlab.Core {
 
             return string.Format( "{0}[{1}]", type.Name, propertyValues.ToSeparatedString( k => string.Format( "{0}:{1}", k.Key, k.Value is IList || k.Value is ICollection ? ( k.Value as IEnumerable ).Cast<object>().ToSeparatedString( enumerableElement => enumerableElement != null ? enumerableElement.ToString() : "null" ) : k.Value ) ) );
         }
+
+        [DebuggerStepThrough]
+        public static string Slugify( string text ) {
+            IdnMapping idnMapping = new IdnMapping();
+            text = idnMapping.GetAscii( text );
+
+            text = RemoveAccent( text ).ToLower();
+
+            //  Remove all invalid characters.  
+            text = Regex.Replace( text, @"[^a-z0-9\s-]", "" );
+
+            //  Convert multiple spaces into one space
+            text = Regex.Replace( text, @"\s+", " " ).Trim();
+
+            //  Replace spaces by underscores.
+            text = Regex.Replace( text, @"\s", "_" );
+
+            return text;
+        }
+
+        [DebuggerStepThrough]
+        public static string RemoveAccent( string text ) {
+            byte[] bytes = Encoding.GetEncoding( "Cyrillic" ).GetBytes( text );
+
+            return Encoding.ASCII.GetString( bytes );
+        }
     }
 }
 
