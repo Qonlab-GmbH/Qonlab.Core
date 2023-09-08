@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using Qonlab.Core.ExtendedList;
 
 namespace Qonlab.Core {
@@ -78,22 +77,12 @@ namespace Qonlab.Core {
 
         [DebuggerStepThrough]
         public static HashSet<TKey> ToHashSet<TSource, TKey>( this IEnumerable<TSource> source, Func<TSource, TKey> keySelector ) {
-            var hs = new HashSet<TKey>();
-
-            foreach ( var item in source )
-                hs.Add( keySelector( item ) );
-
-            return hs;
+            return new HashSet<TKey>( source.Select( i => keySelector( i ) ) );
         }
 
         [DebuggerStepThrough]
         public static HashSet<TKey> ToHashSet<TSource, TKey>( this IEnumerable<TSource> source, params Func<TSource, TKey>[] keySelectors ) {
-            var hs = new HashSet<TKey>();
-
-            foreach ( var key in source.SelectMany( item => keySelectors.Select( ks => ks( item ) ).Where( key => !hs.Contains( key ) ) ) )
-                hs.Add( key );
-
-            return hs;
+            return new HashSet<TKey>( source.SelectMany( item => keySelectors.Select( ks => ks( item ) ) ) );
         }
 
         [DebuggerStepThrough]

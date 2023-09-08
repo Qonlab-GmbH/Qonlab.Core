@@ -243,14 +243,6 @@ namespace Qonlab.Core {
         }
 
         [DebuggerStepThrough]
-        public static void AddDelta<T>( this HashSet<T> hs, IEnumerable<T> values ) {
-            values.ForEach( v => {
-                if ( !hs.Contains( v ) )
-                    hs.Add( v );
-            } );
-        }
-
-        [DebuggerStepThrough]
         public static string ToMD5Hash( this string s ) {
             if ( ( s == null ) || ( s.Length == 0 ) ) {
                 return string.Empty;
